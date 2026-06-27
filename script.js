@@ -1,21 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const revealElements = document.querySelectorAll('.reveal');
-
-    const revealOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target);
+    if (prefersReducedMotion) {
+        revealElements.forEach((el) => el.classList.add('active'));
+    } else {
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -30px 0px'
         });
-    }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
-    });
 
-    revealElements.forEach((el) => revealOnScroll.observe(el));
+        revealElements.forEach((el) => revealOnScroll.observe(el));
+    }
 
     const projectCards = document.querySelectorAll('.interactive-card[data-href]');
-
     const openCardLink = (card) => {
         const href = card.dataset.href;
         if (!href) return;
@@ -35,32 +39,91 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const skillsStrip = document.querySelector('.skills-strip');
-    if (!skillsStrip) return;
+    const copyEmailButton = document.getElementById('copy-email');
+    const emailFeedback = document.getElementById('email-feedback');
+    if (copyEmailButton && emailFeedback) {
+        const emailText = copyEmailButton.dataset.emails || 'b24cs1105@iitj.ac.in, thakorsaharsh33@gmail.com';
+        const setFeedback = (text) => {
+            emailFeedback.textContent = text;
+        };
 
-    skillsStrip.addEventListener('wheel', (event) => {
-        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+        const fallbackCopy = (text) => {
+            const helper = document.createElement('textarea');
+            helper.value = text;
+            helper.setAttribute('readonly', '');
+            helper.style.position = 'absolute';
+            helper.style.left = '-9999px';
+            document.body.appendChild(helper);
+            helper.select();
+            document.execCommand('copy');
+            document.body.removeChild(helper);
+        };
 
-        const maxScrollLeft = skillsStrip.scrollWidth - skillsStrip.clientWidth;
-        if (maxScrollLeft <= 0) return;
-
-        event.preventDefault();
-        skillsStrip.scrollBy({
-            left: event.deltaY,
-            behavior: 'smooth'
+        copyEmailButton.addEventListener('click', async () => {
+            try {
+                if (navigator.clipboard?.writeText) {
+                    await navigator.clipboard.writeText(emailText);
+                } else {
+                    fallbackCopy(emailText);
+                }
+                setFeedback('Email copied. Paste it in any mail app.');
+            } catch (error) {
+                setFeedback('Copy failed. Use: b24cs1105@iitj.ac.in');
+            }
         });
-    }, { passive: false });
+    }
 
-    skillsStrip.addEventListener('keydown', (event) => {
-        const step = 120;
-        if (event.key === 'ArrowRight') {
-            event.preventDefault();
-            skillsStrip.scrollBy({ left: step, behavior: 'smooth' });
-        }
+    const skillsSection = document.querySelector('[data-skills-section]');
+    const skillsWheel = document.querySelector('[data-skills-wheel]');
+    const wheelSkills = Array.from(document.querySelectorAll('.wheel-skill'));
+    const skillFeedItems = Array.from(document.querySelectorAll('.skill-feed-item'));
+    const progressFill = document.querySelector('[data-progress-fill]');
+    const progressValue = document.querySelector('[data-progress-value]');
 
-        if (event.key === 'ArrowLeft') {
-            event.preventDefault();
-            skillsStrip.scrollBy({ left: -step, behavior: 'smooth' });
+    if (!skillsSection || !wheelSkills.length || !progressFill || !progressValue) return;
+
+    const totalSkills = wheelSkills.length;
+    skillsSection.style.setProperty('--skills-count', String(totalSkills));
+
+    let ticking = false;
+    const updateSkillReveal = () => {
+        const rect = skillsSection.getBoundingClientRect();
+        const sectionTop = window.scrollY + rect.top;
+        const scrollDistance = Math.max(skillsSection.offsetHeight - window.innerHeight, 1);
+        const rawProgress = (window.scrollY - sectionTop) / scrollDistance;
+        const progress = prefersReducedMotion ? 1 : Math.min(1, Math.max(0, rawProgress));
+        const revealedCount = prefersReducedMotion
+            ? totalSkills
+            : Math.max(1, Math.floor(progress * totalSkills) + 1);
+
+        wheelSkills.forEach((item, index) => {
+            item.classList.toggle('active', index < revealedCount);
+        });
+
+        skillFeedItems.forEach((item, index) => {
+            item.classList.toggle('active', index < revealedCount);
+        });
+
+        const percent = Math.round((revealedCount / totalSkills) * 100);
+        progressFill.style.width = `${percent}%`;
+        progressValue.textContent = `${revealedCount}/${totalSkills}`;
+
+        if (skillsWheel) {
+            const rotation = prefersReducedMotion ? 0 : (progress * 140) - 70;
+            skillsWheel.style.setProperty('--wheel-rotation', `${rotation}deg`);
         }
-    });
+    };
+
+    const requestUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(() => {
+            updateSkillReveal();
+            ticking = false;
+        });
+    };
+
+    updateSkillReveal();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
 });

@@ -4,204 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saharsh Thakor | Portfolio</title>
-    <meta name="description" content="Portfolio of Saharsh Thakor, Software Engineer & B.Tech CSE student at IIT Jodhpur.">
-    
-    <!-- Google Fonts -->
+    <meta name="description" content="Portfolio of Saharsh Thakor, Software Engineer &amp; B.Tech CSE student at IIT Jodhpur.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Devicon for Language/Tech Logos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main class="container">
-        <section class="bento-grid" aria-label="Portfolio sections">
-            
-            <!-- Hero / Profile Box -->
-            <div class="bento-box hero-box span-2-col reveal">
-                <div class="hero-content">
-                    <div class="status-badge">
-                        <span class="status-dot"></span> Available for Opportunities
-                    </div>
-                    <h1>Saharsh Thakor</h1>
-                    <h2>Upcoming 3rd Year B.Tech CSE <br> @ IIT Jodhpur</h2>
-                    <p class="bio">Building scalable backend systems and intelligent applications. Passionate about software architecture and algorithms.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/Saharsh33" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/saharsh-thakor-b83b28328/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="mailto:thakorsaharsh33@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    </div>
-                </div>
+        <section class="story-section hero reveal" id="home" aria-labelledby="hero-title">
+            <div class="story-glow" aria-hidden="true"></div>
+            <p class="status-badge"><span class="status-dot"></span>Available for opportunities</p>
+            <h1 id="hero-title">Saharsh Thakor</h1>
+            <p class="hero-subtitle">Backend systems, intelligent tooling, and deep computer science fundamentals.</p>
+            <p class="hero-copy">I design systems that stay resilient under load, then keep polishing until they feel effortless to use.</p>
+            <div class="hero-actions">
+                <a class="cta-button primary email-cta" href="mailto:b24cs1105@iitj.ac.in?cc=thakorsaharsh33@gmail.com&amp;subject=Portfolio%20Inquiry">Email collaboration</a>
+                <button class="cta-button secondary" id="copy-email" type="button" data-emails="b24cs1105@iitj.ac.in, thakorsaharsh33@gmail.com">Copy email</button>
             </div>
-
-            <!-- Photo Placeholder Box -->
-            <div class="bento-box photo-box reveal delay-1">
-                <div class="box-header">
-                    <i class="fa-solid fa-image"></i>
-                    <h3>Photograph</h3>
-                </div>
-                <div class="photo-frame" aria-label="Personal photo placeholder">
-                    <div class="photo-placeholder-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                    <p>Add Portrait Photo</p>
-                    <span>Recommended: square image</span>
-                </div>
+            <p class="email-feedback" id="email-feedback" aria-live="polite"></p>
+            <div class="social-links" aria-label="External profiles">
+                <a href="https://github.com/Saharsh33" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saharsh-thakor-b83b28328/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:b24cs1105@iitj.ac.in?cc=thakorsaharsh33@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
+        </section>
 
-            <!-- About / Experience Box -->
-            <div class="bento-box experience-box reveal delay-2">
-                <div class="box-header">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <h3>Experience</h3>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">Jan 2025 - Present</div>
-                        <div class="timeline-title">Undergraduate Researcher</div>
-                        <div class="timeline-company">IIT Jodhpur (Dept. of EE)</div>
-                        <p>Developed a path-following control system for a unicycle robot using Guiding Vector Fields (GVF).</p>
-                    </div>
-                </div>
+        <section class="story-section about reveal" id="about" aria-labelledby="about-title">
+            <div class="section-heading">
+                <span>Chapter 01</span>
+                <h2 id="about-title">About / Bio</h2>
             </div>
-
-            <!-- Skills Box -->
-            <div class="bento-box skills-box span-2-col reveal delay-3">
-                <div class="box-header">
-                    <i class="fa-solid fa-code"></i>
-                    <h3>Tech Stack</h3>
-                </div>
-                <div class="skills-strip" tabindex="0" role="region" aria-label="Horizontally scrollable list of technology logos">
-                    <span class="skill-logo"><i class="devicon-cplusplus-plain colored"></i> C++</span>
-                    <span class="skill-logo"><i class="devicon-go-original-wordmark colored"></i> Go</span>
-                    <span class="skill-logo"><i class="devicon-python-plain colored"></i> Python</span>
-                    <span class="skill-logo"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
-                    <span class="skill-logo"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
-                    <span class="skill-logo"><i class="devicon-redis-plain colored"></i> Redis</span>
-                    <span class="skill-logo"><i class="devicon-docker-plain colored"></i> Docker</span>
-                    <span class="skill-logo"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
-                    <span class="skill-logo"><i class="devicon-git-plain colored"></i> Git</span>
-                    <span class="skill-logo"><i class="devicon-linux-plain colored"></i> Linux</span>
-                </div>
+            <div class="about-grid">
+                <article class="about-card">
+                    <h3>Builder mindset</h3>
+                    <p>I enjoy turning rough architecture ideas into practical, measurable systems with clear ownership and clean interfaces.</p>
+                </article>
+                <article class="about-card">
+                    <h3>Space for story</h3>
+                    <p>This section is intentionally open so I can keep adding personal context, interests, and current focus over time.</p>
+                </article>
             </div>
+        </section>
 
-            <!-- Main Project 1 (LeetJudge) -->
-            <div class="bento-box project-box highlight span-2-col reveal delay-4 interactive-card" data-href="https://github.com/Saharsh33/LeetJudge" role="link" tabindex="0" aria-label="Open LeetJudge project repository">
-                <div class="project-content">
-                    <div class="project-meta">
-                        <span class="project-year">2026</span>
-                        <a href="https://github.com/Saharsh33/LeetJudge" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open LeetJudge on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3>LeetJudge</h3>
-                    <p class="project-desc">A scalable full-stack online judge architecture with a decoupled worker system (Redis/BullMQ) and Docker sandbox. Processed 600k+ requests under load testing.</p>
-                    <div class="project-tags">
-                        <span>Node.js</span>
-                        <span>Docker</span>
-                        <span>Redis</span>
-                        <span>PostgreSQL</span>
+        <section class="story-section skills-chapter reveal" id="skills" data-skills-section aria-labelledby="skills-title">
+            <div class="skills-pinned-panel">
+                <div class="section-heading">
+                    <span>Chapter 02</span>
+                    <h2 id="skills-title">Skill Orbit</h2>
+                    <p>Scroll to unlock each node. The section stays pinned until every skill is revealed.</p>
+                </div>
+                <div class="skills-progress">
+                    <span>Reveal Progress</span>
+                    <div class="progress-track"><div class="progress-fill" data-progress-fill></div></div>
+                    <strong data-progress-value>1/19</strong>
+                </div>
+                <div class="skills-wheel-wrap">
+                    <div class="skills-wheel" data-skills-wheel aria-label="Interactive skill wheel">
+                        <div class="wheel-skill" style="--slot:0;"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                        <div class="wheel-skill" style="--slot:1;"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+                        <div class="wheel-skill" style="--slot:2;"><i class="devicon-express-original"></i><span>Express.js</span></div>
+                        <div class="wheel-skill" style="--slot:3;"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                        <div class="wheel-skill" style="--slot:4;"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+                        <div class="wheel-skill" style="--slot:5;"><i class="fa-solid fa-gears"></i><span>Celery</span></div>
+                        <div class="wheel-skill" style="--slot:6;"><i class="fa-solid fa-cubes-stacked"></i><span>BullMQ</span></div>
+                        <div class="wheel-skill" style="--slot:7;"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                        <div class="wheel-skill" style="--slot:8;"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+                        <div class="wheel-skill" style="--slot:9;"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                        <div class="wheel-skill" style="--slot:10;"><i class="fa-solid fa-database"></i><span>SQLAlchemy</span></div>
+                        <div class="wheel-skill" style="--slot:11;"><i class="fa-solid fa-code-branch"></i><span>tree-sitter</span></div>
+                        <div class="wheel-skill" style="--slot:12;"><i class="fa-solid fa-layer-group"></i><span>ChromaDB</span></div>
+                        <div class="wheel-skill" style="--slot:13;"><i class="devicon-go-original-wordmark colored"></i><span>Go</span></div>
+                        <div class="wheel-skill" style="--slot:14;"><i class="devicon-c-plain colored"></i><span>C</span></div>
+                        <div class="wheel-skill" style="--slot:15;"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+                        <div class="wheel-skill" style="--slot:16;"><i class="devicon-tensorflow-original colored"></i><span>TensorFlow.js</span></div>
+                        <div class="wheel-skill" style="--slot:17;"><i class="devicon-opencv-plain colored"></i><span>OpenCV.js</span></div>
+                        <div class="wheel-skill" style="--slot:18;"><i class="fa-solid fa-toolbox"></i><span>Git · GitHub · Postman</span></div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Education Box -->
-            <div class="bento-box education-box reveal delay-5">
-                <div class="box-header">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <h3>Education</h3>
-                </div>
-                <div class="education-content">
-                    <div class="edu-degree">B.Tech in Computer Science</div>
-                    <div class="edu-school">IIT Jodhpur</div>
-                    <div class="edu-meta">
-                        <span>CGPA: 8.88</span>
-                        <span>2024 - 2028</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 (RepoChat) -->
-            <div class="bento-box project-box reveal delay-6 interactive-card" data-href="https://github.com/Saharsh33/RepoChat" role="link" tabindex="0" aria-label="Open RepoChat project repository">
-                <div class="project-content">
-                    <div class="project-meta">
-                        <span class="project-year">2026</span>
-                        <a href="https://github.com/Saharsh33/RepoChat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open RepoChat on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3>RepoChat</h3>
-                    <p class="project-desc">Large-Scale Codebase RAG System with AST-aware chunking (FastAPI, ChromaDB).</p>
-                    <div class="project-tags">
-                        <span>FastAPI</span>
-                        <span>ChromaDB</span>
-                        <span>Celery</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 (Music System) -->
-            <div class="bento-box project-box reveal delay-7 interactive-card" data-href="https://github.com/Saharsh33/CSL2020" role="link" tabindex="0" aria-label="Open Music Engine project repository">
-                <div class="project-content">
-                    <div class="project-meta">
-                        <span class="project-year">2025</span>
-                        <a href="https://github.com/Saharsh33/CSL2020" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open Music Engine on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3>Music Engine</h3>
-                    <p class="project-desc">Graph-based recommendation engine & Trie-based fast querying system in C++17.</p>
-                    <div class="project-tags">
-                        <span>C++17</span>
-                        <span>Algorithms</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 (go-chat) -->
-            <div class="bento-box project-box reveal delay-8 interactive-card" data-href="https://github.com/Saharsh33/go-chat" role="link" tabindex="0" aria-label="Open go-chat project repository">
-                <div class="project-content">
-                    <div class="project-meta">
-                        <span class="project-year">2025</span>
-                        <a href="https://github.com/Saharsh33/go-chat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open go-chat on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3>go-chat</h3>
-                    <p class="project-desc">A real-time chat application built with Go, showcasing concurrent networking and WebSockets.</p>
-                    <div class="project-tags">
-                        <span>Go</span>
-                        <span>WebSockets</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5 (ProctoAI) -->
-            <div class="bento-box project-box reveal delay-9 interactive-card" data-href="https://github.com/Saharsh33/ProctoAI" role="link" tabindex="0" aria-label="Open ProctoAI project repository">
-                <div class="project-content">
-                    <div class="project-meta">
-                        <span class="project-year">2025</span>
-                        <a href="https://github.com/Saharsh33/ProctoAI" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open ProctoAI on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3>ProctoAI</h3>
-                    <p class="project-desc">An AI-powered automated proctoring solution designed to maintain academic integrity during online assessments.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>AI/ML</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Achievements Box -->
-            <div class="bento-box achievements-box reveal delay-9">
-                <div class="box-header">
-                    <i class="fa-solid fa-trophy"></i>
-                    <h3>Achievements</h3>
-                </div>
-                <ul class="achievements-list">
-                    <li><i class="fa-solid fa-check text-accent"></i> AlgoUniversity Tech Fellowship (Top 8%)</li>
-                    <li><i class="fa-solid fa-check text-accent"></i> Solved 300+ DSA problems</li>
+                <ul class="skill-feed" aria-label="Skill reveal state">
+                    <li class="skill-feed-item">JavaScript</li>
+                    <li class="skill-feed-item">Node.js</li>
+                    <li class="skill-feed-item">Express.js</li>
+                    <li class="skill-feed-item">Python</li>
+                    <li class="skill-feed-item">FastAPI</li>
+                    <li class="skill-feed-item">Celery</li>
+                    <li class="skill-feed-item">BullMQ</li>
+                    <li class="skill-feed-item">PostgreSQL</li>
+                    <li class="skill-feed-item">Redis</li>
+                    <li class="skill-feed-item">Docker</li>
+                    <li class="skill-feed-item">SQLAlchemy</li>
+                    <li class="skill-feed-item">tree-sitter</li>
+                    <li class="skill-feed-item">ChromaDB</li>
+                    <li class="skill-feed-item">Go</li>
+                    <li class="skill-feed-item">C</li>
+                    <li class="skill-feed-item">C++</li>
+                    <li class="skill-feed-item">TensorFlow.js</li>
+                    <li class="skill-feed-item">OpenCV.js</li>
+                    <li class="skill-feed-item">Git · GitHub · Postman</li>
                 </ul>
             </div>
+        </section>
 
+        <section class="story-section projects reveal" id="projects" aria-labelledby="projects-title">
+            <div class="section-heading">
+                <span>Chapter 03</span>
+                <h2 id="projects-title">Projects</h2>
+            </div>
+            <div class="project-list">
+                <article class="project-card interactive-card" data-href="https://github.com/Saharsh33/LeetJudge" role="link" tabindex="0" aria-label="Open LeetJudge repository">
+                    <div class="project-meta">
+                        <h3>LeetJudge</h3>
+                        <a href="https://github.com/Saharsh33/LeetJudge" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open LeetJudge on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <p>A scalable online judge architecture with decoupled workers and Dockerized execution.</p>
+                    <p class="stack-label">Tech stack</p>
+                    <ul class="stack-list"><li>Node.js</li><li>Express.js</li><li>Redis</li><li>BullMQ</li><li>PostgreSQL</li><li>Docker</li></ul>
+                </article>
+
+                <article class="project-card interactive-card" data-href="https://github.com/Saharsh33/RepoChat" role="link" tabindex="0" aria-label="Open RepoChat repository">
+                    <div class="project-meta">
+                        <h3>RepoChat</h3>
+                        <a href="https://github.com/Saharsh33/RepoChat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open RepoChat on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <p>Large-scale codebase RAG with AST-aware chunking and asynchronous ingestion.</p>
+                    <p class="stack-label">Tech stack</p>
+                    <ul class="stack-list"><li>FastAPI</li><li>Celery</li><li>Redis</li><li>SQLAlchemy</li><li>tree-sitter</li><li>ChromaDB</li></ul>
+                </article>
+
+                <article class="project-card interactive-card" data-href="https://github.com/Saharsh33/CSL2020" role="link" tabindex="0" aria-label="Open Music Engine repository">
+                    <div class="project-meta">
+                        <h3>Music Engine</h3>
+                        <a href="https://github.com/Saharsh33/CSL2020" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open Music Engine on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <p>Graph-based recommendation and trie-driven query engine focused on low-latency lookups.</p>
+                    <p class="stack-label">Tech stack</p>
+                    <ul class="stack-list"><li>C++</li><li>Graphs</li><li>Trie</li><li>DSA</li></ul>
+                </article>
+
+                <article class="project-card interactive-card" data-href="https://github.com/Saharsh33/go-chat" role="link" tabindex="0" aria-label="Open go-chat repository">
+                    <div class="project-meta">
+                        <h3>go-chat</h3>
+                        <a href="https://github.com/Saharsh33/go-chat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open go-chat on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <p>Concurrent real-time chat server with WebSockets and efficient connection management.</p>
+                    <p class="stack-label">Tech stack</p>
+                    <ul class="stack-list"><li>Go</li><li>WebSockets</li><li>Concurrency</li></ul>
+                </article>
+
+                <article class="project-card interactive-card" data-href="https://github.com/Saharsh33/ProctoAI" role="link" tabindex="0" aria-label="Open ProctoAI repository">
+                    <div class="project-meta">
+                        <h3>ProctoAI</h3>
+                        <a href="https://github.com/Saharsh33/ProctoAI" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open ProctoAI on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <p>Automated AI proctoring system to enforce assessment integrity during online exams.</p>
+                    <p class="stack-label">Tech stack</p>
+                    <ul class="stack-list"><li>Python</li><li>Computer Vision</li><li>ML Inference</li></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="story-section education reveal" id="education" aria-labelledby="education-title">
+            <div class="section-heading">
+                <span>Chapter 04</span>
+                <h2 id="education-title">Education</h2>
+            </div>
+            <article class="education-card">
+                <h3>B.Tech in Computer Science and Engineering</h3>
+                <p>IIT Jodhpur</p>
+                <div class="edu-meta">
+                    <span>2024 – 2028</span>
+                    <span>CGPA: 8.88</span>
+                </div>
+            </article>
         </section>
     </main>
 
