@@ -20,16 +20,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Background Ambient Glow -->
-    <div class="ambient-glow"></div>
-
     <main class="container">
-        
-        <div id="bento-grid-wrapper">
-            <div class="bento-grid">
+        <section class="bento-grid" aria-label="Portfolio sections">
             
             <!-- Hero / Profile Box -->
-            <div class="bento-box hero-box span-2-col span-2-row reveal">
+            <div class="bento-box hero-box span-2-col reveal">
                 <div class="hero-content">
                     <div class="status-badge">
                         <span class="status-dot"></span> Available for Opportunities
@@ -38,16 +33,30 @@
                     <h2>Upcoming 3rd Year B.Tech CSE <br> @ IIT Jodhpur</h2>
                     <p class="bio">Building scalable backend systems and intelligent applications. Passionate about software architecture and algorithms.</p>
                     <div class="social-links">
-                        <a href="https://github.com/Saharsh33" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/saharsh-thakor-b83b28328/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Saharsh33" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/saharsh-thakor-b83b28328/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="mailto:thakorsaharsh33@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
-                <div class="hero-decoration"></div>
+            </div>
+
+            <!-- Photo Placeholder Box -->
+            <div class="bento-box photo-box reveal delay-1">
+                <div class="box-header">
+                    <i class="fa-solid fa-image"></i>
+                    <h3>Photograph</h3>
+                </div>
+                <div class="photo-frame" aria-label="Personal photo placeholder">
+                    <div class="photo-placeholder-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <p>Add Portrait Photo</p>
+                    <span>Recommended: square image</span>
+                </div>
             </div>
 
             <!-- About / Experience Box -->
-            <div class="bento-box experience-box reveal delay-1">
+            <div class="bento-box experience-box reveal delay-2">
                 <div class="box-header">
                     <i class="fa-solid fa-briefcase"></i>
                     <h3>Experience</h3>
@@ -63,29 +72,31 @@
             </div>
 
             <!-- Skills Box -->
-            <div class="bento-box skills-box reveal delay-2">
+            <div class="bento-box skills-box span-2-col reveal delay-3">
                 <div class="box-header">
                     <i class="fa-solid fa-code"></i>
                     <h3>Tech Stack</h3>
                 </div>
-                <div class="skills-container">
-                    <span class="skill-tag"><i class="devicon-cplusplus-plain colored"></i> C++</span>
-                    <span class="skill-tag"><i class="devicon-go-original-wordmark colored"></i> Go</span>
-                    <span class="skill-tag"><i class="devicon-python-plain colored"></i> Python</span>
-                    <span class="skill-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
-                    <span class="skill-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
-                    <span class="skill-tag"><i class="devicon-redis-plain colored"></i> Redis</span>
-                    <span class="skill-tag"><i class="devicon-docker-plain colored"></i> Docker</span>
-                    <span class="skill-tag"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+                <div class="skills-strip" tabindex="0" role="region" aria-label="Horizontally scrollable list of technology logos">
+                    <span class="skill-logo"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+                    <span class="skill-logo"><i class="devicon-go-original-wordmark colored"></i> Go</span>
+                    <span class="skill-logo"><i class="devicon-python-plain colored"></i> Python</span>
+                    <span class="skill-logo"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+                    <span class="skill-logo"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+                    <span class="skill-logo"><i class="devicon-redis-plain colored"></i> Redis</span>
+                    <span class="skill-logo"><i class="devicon-docker-plain colored"></i> Docker</span>
+                    <span class="skill-logo"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+                    <span class="skill-logo"><i class="devicon-git-plain colored"></i> Git</span>
+                    <span class="skill-logo"><i class="devicon-linux-plain colored"></i> Linux</span>
                 </div>
             </div>
 
             <!-- Main Project 1 (LeetJudge) -->
-            <div class="bento-box project-box highlight span-2-col reveal delay-3">
+            <div class="bento-box project-box highlight span-2-col reveal delay-4 interactive-card" data-href="https://github.com/Saharsh33/LeetJudge" role="link" tabindex="0" aria-label="Open LeetJudge project repository">
                 <div class="project-content">
                     <div class="project-meta">
                         <span class="project-year">2026</span>
-                        <a href="https://github.com/Saharsh33/LeetJudge" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/Saharsh33/LeetJudge" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open LeetJudge on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                     <h3>LeetJudge</h3>
                     <p class="project-desc">A scalable full-stack online judge architecture with a decoupled worker system (Redis/BullMQ) and Docker sandbox. Processed 600k+ requests under load testing.</p>
@@ -99,7 +110,7 @@
             </div>
 
             <!-- Education Box -->
-            <div class="bento-box education-box reveal delay-4">
+            <div class="bento-box education-box reveal delay-5">
                 <div class="box-header">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <h3>Education</h3>
@@ -115,11 +126,11 @@
             </div>
 
             <!-- Project 2 (RepoChat) -->
-            <div class="bento-box project-box reveal delay-5">
+            <div class="bento-box project-box reveal delay-6 interactive-card" data-href="https://github.com/Saharsh33/RepoChat" role="link" tabindex="0" aria-label="Open RepoChat project repository">
                 <div class="project-content">
                     <div class="project-meta">
                         <span class="project-year">2026</span>
-                        <a href="https://github.com/Saharsh33/RepoChat" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/Saharsh33/RepoChat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open RepoChat on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                     <h3>RepoChat</h3>
                     <p class="project-desc">Large-Scale Codebase RAG System with AST-aware chunking (FastAPI, ChromaDB).</p>
@@ -132,11 +143,11 @@
             </div>
 
             <!-- Project 3 (Music System) -->
-            <div class="bento-box project-box reveal delay-6">
+            <div class="bento-box project-box reveal delay-7 interactive-card" data-href="https://github.com/Saharsh33/CSL2020" role="link" tabindex="0" aria-label="Open Music Engine project repository">
                 <div class="project-content">
                     <div class="project-meta">
                         <span class="project-year">2025</span>
-                        <a href="https://github.com/Saharsh33/CSL2020" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/Saharsh33/CSL2020" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open Music Engine on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                     <h3>Music Engine</h3>
                     <p class="project-desc">Graph-based recommendation engine & Trie-based fast querying system in C++17.</p>
@@ -148,11 +159,11 @@
             </div>
 
             <!-- Project 4 (go-chat) -->
-            <div class="bento-box project-box reveal delay-7">
+            <div class="bento-box project-box reveal delay-8 interactive-card" data-href="https://github.com/Saharsh33/go-chat" role="link" tabindex="0" aria-label="Open go-chat project repository">
                 <div class="project-content">
                     <div class="project-meta">
                         <span class="project-year">2025</span>
-                        <a href="https://github.com/Saharsh33/go-chat" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/Saharsh33/go-chat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open go-chat on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                     <h3>go-chat</h3>
                     <p class="project-desc">A real-time chat application built with Go, showcasing concurrent networking and WebSockets.</p>
@@ -164,11 +175,11 @@
             </div>
 
             <!-- Project 5 (ProctoAI) -->
-            <div class="bento-box project-box reveal delay-8">
+            <div class="bento-box project-box reveal delay-9 interactive-card" data-href="https://github.com/Saharsh33/ProctoAI" role="link" tabindex="0" aria-label="Open ProctoAI project repository">
                 <div class="project-content">
                     <div class="project-meta">
                         <span class="project-year">2025</span>
-                        <a href="https://github.com/Saharsh33/ProctoAI" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/Saharsh33/ProctoAI" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open ProctoAI on GitHub"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                     <h3>ProctoAI</h3>
                     <p class="project-desc">An AI-powered automated proctoring solution designed to maintain academic integrity during online assessments.</p>
@@ -191,8 +202,7 @@
                 </ul>
             </div>
 
-            </div> <!-- End bento-grid -->
-        </div> <!-- End bento-grid-wrapper -->
+        </section>
     </main>
 
     <script src="script.js"></script>
